@@ -1,0 +1,44 @@
+﻿@page
+@using FriendsCompatibilityGame.Areas.Identity.Pages.Account
+@model LoginModel
+@{
+    ViewData["Title"] = "تسجيل الدخول";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h2>تسجيل الدخول</h2>
+
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger error-message"></div>
+
+        <div class="form-group">
+            <label asp-for="Input.Email"></label>
+            <input asp-for="Input.Email" class="form-control" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Input.Password"></label>
+            <input asp-for="Input.Password" class="form-control" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group form-check">
+            <input asp-for="Input.RememberMe" class="form-check-input" />
+            <label asp-for="Input.RememberMe" class="form-check-label">تذكرني</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+    </form>
+
+    <div class="text-center mt-2">
+        <a asp-page="./Register">ليس لديك حساب؟ سجل الآن</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

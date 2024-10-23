@@ -1,0 +1,28 @@
+﻿@page
+@using FriendsCompatibilityGame.Areas.Identity.Pages.Account
+@model FriendsCompatibilityGame.Areas.Identity.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "تسجيل";
+    Layout = "_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Input.Email"></label>
+        <input asp-for="Input.Email" />
+        <span asp-validation-for="Input.Email"></span>
+    </div>
+    <div>
+        <label asp-for="Input.Password"></label>
+        <input asp-for="Input.Password" type="password" />
+        <span asp-validation-for="Input.Password"></span>
+    </div>
+    <div>
+        <label asp-for="Input.ConfirmPassword"></label>
+        <input asp-for="Input.ConfirmPassword" type="password" />
+        <span asp-validation-for="Input.ConfirmPassword"></span>
+    </div>
+    <button type="submit">تسجيل</button>
+</form>
